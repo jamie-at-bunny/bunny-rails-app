@@ -1,0 +1,13 @@
+name: Magic Containers
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-mc:
+    uses: BunnyWay/bunnynet-mc-templates/.github/workflows/package-and-deploy-mc.yml@main
+    with:
+      repository-name: ${{ github.repository }}
+    secrets:
+      token: ${{ secrets.GITHUB_TOKEN }}
